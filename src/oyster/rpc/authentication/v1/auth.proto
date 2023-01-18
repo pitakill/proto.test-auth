@@ -1,0 +1,12 @@
+syntax = "proto3";
+package oyster.rpc.authentication.v1;
+
+import "oyster/entities/pb/authentication/v1/auth.proto";
+
+option java_generate_equals_and_hash = true;
+option java_outer_classname = "AuthenticationRpcPb";
+option java_package = "com.oyster.rpc.authentication";
+
+service AuthenticationService {
+  rpc Login(oyster.entities.pb.authentication.v1.LoginRequest) returns (oyster.entities.pb.authentication.v1.LoginResponse);
+}

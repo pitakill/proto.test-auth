@@ -1,0 +1,14 @@
+syntax = "proto3";
+package oyster.entities.pb.authentication.internal.v1;
+
+option java_generate_equals_and_hash = true;
+option java_outer_classname = "AuthenticationInternalPb";
+option java_package = "com.oyster.entities.pb.authentication.internal";
+
+message VerifyTokenRequest{
+  string token = 1;
+}
+
+message VerifyTokenResponse {
+  bool valid = 1;
+}
