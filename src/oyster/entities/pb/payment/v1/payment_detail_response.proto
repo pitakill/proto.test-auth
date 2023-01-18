@@ -1,0 +1,18 @@
+syntax = "proto3";
+package oyster.entities.pb.payment.v1;
+
+import "oyster/entities/pb/payment/domain/v1/payment.proto";
+import "oyster/entities/pb/v1/commons.proto";
+import "oyster/entities/pb/v1/errors.proto";
+
+option java_generate_equals_and_hash = true;
+option java_outer_classname = "PaymentTransactionInfoResponsePb";
+option java_package = "com.oyster.entities.pb.payment";
+
+message GetPaymentTransactionResponse {
+  oyster.entities.pb.v1.Debug debug = 1;
+  bool success = 2;
+  bool error = 3;
+  oyster.entities.pb.v1.ErrorMessage error_message = 4;
+  oyster.entities.pb.payment.domain.v1.Payment payment = 5;
+}

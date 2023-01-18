@@ -1,0 +1,107 @@
+name: npm/java package publisher
+on:
+  push:
+    branches:
+      - main
+jobs:
+  publish_tag_package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: "0"
+
+      - name: Setup `buf`
+        uses: bufbuild/buf-setup-action@v1.11.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup `node` 
+        uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+          registry-url: "https://npm.pkg.github.com"
+          scope: "@yaydoo"
+
+      - name: Setup `protoc` 
+        uses: arduino/setup-protoc@v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Java JDK
+        uses: actions/setup-java@v1
+        with:
+          java-version: 11
+
+      - name: Install java tools
+        run: ./get-java-tools.sh
+
+      - name: Install binaries for Typescript
+        run: |
+          yarn global add grpc_tools_node_protoc_ts grpc-tools
+
+        # After generation we need a way and a place to publish the documentation
+        # built in this step
+      - name: Install doc tools (protoc-gen-doc)
+        uses: jaxxstorm/action-install-gh-release@v1.9.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          repo: pseudomuto/protoc-gen-doc
+          tag: v1.5.1
+          extension-matching: disable
+          rename-to: protoc-gen-doc
+          chmod: 0755
+
+      - name: Generate all the stubs
+        run: |
+          cd src
+          buf generate
+          cd ..
+
+      - name: Commit the built files
+        uses: EndBug/add-and-commit@v9
+        with:
+          default_author: github_actions
+          add: '["doc", "go"]'
+
+      - name: Copy proto sources from nodejs
+        run: |
+          cp -rv src nodejs/src
+          rm nodejs/src/buf*
+
+      - name: Git setup
+        run: |
+          git config --global user.email "${{ github.actor }}@noreply.github.com"
+          git config --global user.name "${{ github.actor }}"
+          echo "${{ steps.bump_version.outputs.tag }}"
+
+      - name: Bump version and push tag
+        id: bump_version
+        uses: anothrNick/github-tag-action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WITH_V: true
+          RELEASE_BRANCHES: main
+
+      - name: Version & publish node package
+        run: |
+          cd nodejs
+          npm version "${{ steps.bump_version.outputs.tag }}"
+          npm publish
+          cd ..
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GIT_TOKEN }}
+
+      - name: Compile java code from stubs
+        run: |
+          cd java
+          ./gradlew build -Pversion=${{ steps.bump_version.outputs.tag }}
+          cd ..
+
+      - name: Publishing java version
+        run: |
+          cd java
+          ./gradlew publish -Pversion=${{ steps.bump_version.outputs.tag }}
+          cd ..
+        env:
+          GIT_TOKEN: ${{ secrets.GIT_TOKEN }}

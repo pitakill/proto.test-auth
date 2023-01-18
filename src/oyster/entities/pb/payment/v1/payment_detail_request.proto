@@ -1,0 +1,15 @@
+syntax = "proto3";
+package oyster.entities.pb.payment.v1;
+
+import "oyster/entities/pb/v1/auth.proto";
+import "oyster/entities/pb/v1/commons.proto";
+
+option java_generate_equals_and_hash = true;
+option java_outer_classname = "PaymentDetailRequestPb";
+option java_package = "com.oyster.entities.pb.payment";
+
+message GetPaymentTransactionRequest {
+  oyster.entities.pb.v1.Authorization authorization = 1;
+  oyster.entities.pb.v1.Debug debug = 2;
+  string payment_id = 3;
+}

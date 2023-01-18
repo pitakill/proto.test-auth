@@ -1,0 +1,13 @@
+syntax = "proto3";
+package oyster.rpc.payment.v1;
+
+import "oyster/entities/pb/payment/v1/process_payment_request.proto";
+import "oyster/entities/pb/payment/v1/process_payment_response.proto";
+
+option java_generate_equals_and_hash = true;
+option java_outer_classname = "ProcessPaymentRpcPb";
+option java_package = "com.oyster.rpc.payment";
+
+service ProcessPaymentService {
+  rpc MakePayment(oyster.entities.pb.payment.v1.MakePaymentRequest) returns (oyster.entities.pb.payment.v1.MakePaymentResponse);
+}

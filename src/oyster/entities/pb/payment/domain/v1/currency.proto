@@ -1,0 +1,20 @@
+syntax = "proto3";
+package oyster.entities.pb.payment.domain.v1;
+
+option java_generate_equals_and_hash = true;
+option java_outer_classname = "CurrencyPb";
+option java_package = "com.oyster.entities.pb.payment.domain";
+
+enum Currency {
+  CURRENCY_UNSPECIFIED = 0;
+  CURRENCY_MXN = 1;
+  CURRENCY_USD = 2;
+  CURRENCY_CAD = 3;
+  CURRENCY_BRL = 4;
+  CURRENCY_COP = 5;
+}
+
+message CurrencyRate {
+  Currency currency = 1;
+  double rate = 2;
+}

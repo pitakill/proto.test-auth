@@ -1,0 +1,23 @@
+name: lint proto files with `buf`
+on: [pull_request]
+jobs:
+  verify_pr_for_ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install the `buf` CLI
+        uses: bufbuild/buf-setup-action@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }} 
+
+      - name: Lint `src` sub-directory
+        uses: bufbuild/buf-lint-action@v1
+        with:
+          input: src
+
+      - name: Verify against previous version
+        uses: bufbuild/buf-breaking-action@v1
+        with:
+          input: src
+          against: "https://github.com/Yaydoo/proto.boilerplate.git#branch=main,subdir=src"

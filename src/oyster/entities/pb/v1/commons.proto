@@ -1,0 +1,60 @@
+/*
+   * Metadata related messages about permission and debug
+   *
+   * This file have the Permission and Debug messages as base for all the gRPC communications
+*/
+syntax = "proto3";
+package oyster.entities.pb.v1;
+
+option java_generate_equals_and_hash = true;
+option java_outer_classname = "CommonsPb";
+option java_package = "com.oyster.entities.pb";
+
+/*
+   * Permission message to hold information from the client
+   * (DEPRECATED)
+*/
+message Permission {
+  string permission_id = 1;
+  string name = 2;
+  int64 create_at = 3;
+  int64 updated_at = 4;
+}
+
+/*
+   * Debug message to hold information about the request/response
+*/
+message Debug {
+  // debug id to search in logs
+  string debug_id = 1;
+  // user id (DEPRECATED)
+  string user_id = 2;
+  // client (DEPRECATED)
+  string client = 3;
+  // locale (DEPRECATED)
+  string locale = 4;
+  // trace id to search in the system
+  string trace_id = 5;
+  // application version (DEPRECATED)
+  string app_version = 6;
+  // application requested api version (DEPRECATED)
+  string app_requested_api_version = 7;
+  // device id client
+  string device_id = 8;
+  // device type (DEPRECATED)
+  string device_type = 9;
+  // ip client (DEPRECATED)
+  string ip = 10;
+  // coordinates (DEPRECATED)
+  Coordinates coordinates = 11;
+}
+
+/*
+   * Coordinates message to hold information about the client location
+*/
+message Coordinates {
+  // latitude
+  string lat = 1;
+  // longitude
+  string lon = 2;
+}

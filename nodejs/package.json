@@ -1,0 +1,25 @@
+{
+  "name": "@yaydoo/proto.boilerplate",
+  "version": "0.0.0",
+  "description": "Protobuf definitions for proto.boilerplate",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yaydoo/proto.boilerplate.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "author": "Oyster",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yaydoo/proto.boilerplate/issues"
+  },
+  "homepage": "https://github.com/yaydoo/proto.boilerplate#readme.md",
+  "dependencies": {
+    "google-protobuf": "^3.12.0-rc.1"
+  }
+}
