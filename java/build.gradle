@@ -49,10 +49,10 @@ publishing {
   repositories {
     maven {
       name = 'GitHubPackages'
-      url = 'https://maven.pkg.github.com/yaydoo/proto.boilerplate'
+      url = 'https://maven.pkg.github.com/pitaill/proto.test-auth'
       credentials(PasswordCredentials){
         username = '_'
-        password = project.findProperty("gpr.key") ?: System.getenv('GIT_TOKEN')
+        password = project.findProperty("gpr.key") ?: System.getenv('GITHUB_TOKEN')
       }
     }
   }

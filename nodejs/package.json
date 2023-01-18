@@ -1,14 +1,14 @@
 {
-  "name": "@yaydoo/proto.boilerplate",
+  "name": "@pitakill/proto.test-auth",
   "version": "0.0.0",
-  "description": "Protobuf definitions for proto.boilerplate",
+  "description": "Protobuf definitions for proto.test-auth",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yaydoo/proto.boilerplate.git"
+    "url": "git+https://github.com/pitakill/proto.test-auth.git"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
@@ -16,9 +16,9 @@
   "author": "Oyster",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/yaydoo/proto.boilerplate/issues"
+    "url": "https://github.com/pitakill/proto.test-auth/issues"
   },
-  "homepage": "https://github.com/yaydoo/proto.boilerplate#readme.md",
+  "homepage": "https://github.com/pitakill/proto.test-auth#readme.md",
   "dependencies": {
     "google-protobuf": "^3.12.0-rc.1"
   }
