@@ -1,11 +1,11 @@
 syntax = "proto3";
-package oyster.rpc.authentication.internal.v1;
+package oyster.services.authentication.internal.v1;
 
 import "oyster/entities/pb/authentication/internal/v1/auth.proto";
 
 option java_generate_equals_and_hash = true;
 option java_outer_classname = "AuthenticationInternalRpcPb";
-option java_package = "com.oyster.rpc.authentication.internal";
+option java_package = "com.oyster.services.authentication.internal";
 
 service AuthenticationInternalService {
   rpc VerifyToken(oyster.entities.pb.authentication.internal.v1.VerifyTokenRequest) returns (oyster.entities.pb.authentication.internal.v1.VerifyTokenResponse);

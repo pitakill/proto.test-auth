@@ -1,98 +1,9 @@
 {
   "files": [
     {
-      "name": "oyster/entities/pb/payment/domain/v1/currency.proto",
+      "name": "oyster/entities/pb/authentication/internal/v1/auth.proto",
       "description": "",
-      "package": "oyster.entities.pb.payment.domain.v1",
-      "hasEnums": true,
-      "hasExtensions": false,
-      "hasMessages": true,
-      "hasServices": false,
-      "enums": [
-        {
-          "name": "Currency",
-          "longName": "Currency",
-          "fullName": "oyster.entities.pb.payment.domain.v1.Currency",
-          "description": "",
-          "values": [
-            {
-              "name": "CURRENCY_UNSPECIFIED",
-              "number": "0",
-              "description": ""
-            },
-            {
-              "name": "CURRENCY_MXN",
-              "number": "1",
-              "description": ""
-            },
-            {
-              "name": "CURRENCY_USD",
-              "number": "2",
-              "description": ""
-            },
-            {
-              "name": "CURRENCY_CAD",
-              "number": "3",
-              "description": ""
-            },
-            {
-              "name": "CURRENCY_BRL",
-              "number": "4",
-              "description": ""
-            },
-            {
-              "name": "CURRENCY_COP",
-              "number": "5",
-              "description": ""
-            }
-          ]
-        }
-      ],
-      "extensions": [],
-      "messages": [
-        {
-          "name": "CurrencyRate",
-          "longName": "CurrencyRate",
-          "fullName": "oyster.entities.pb.payment.domain.v1.CurrencyRate",
-          "description": "",
-          "hasExtensions": false,
-          "hasFields": true,
-          "hasOneofs": false,
-          "extensions": [],
-          "fields": [
-            {
-              "name": "currency",
-              "description": "",
-              "label": "",
-              "type": "Currency",
-              "longType": "Currency",
-              "fullType": "oyster.entities.pb.payment.domain.v1.Currency",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "rate",
-              "description": "",
-              "label": "",
-              "type": "double",
-              "longType": "double",
-              "fullType": "double",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            }
-          ]
-        }
-      ],
-      "services": []
-    },
-    {
-      "name": "oyster/entities/pb/payment/domain/v1/payment.proto",
-      "description": "",
-      "package": "oyster.entities.pb.payment.domain.v1",
+      "package": "oyster.entities.pb.authentication.internal.v1",
       "hasEnums": false,
       "hasExtensions": false,
       "hasMessages": true,
@@ -101,434 +12,10 @@
       "extensions": [],
       "messages": [
         {
-          "name": "Payment",
-          "longName": "Payment",
-          "fullName": "oyster.entities.pb.payment.domain.v1.Payment",
+          "name": "VerifyTokenRequest",
+          "longName": "VerifyTokenRequest",
+          "fullName": "oyster.entities.pb.authentication.internal.v1.VerifyTokenRequest",
           "description": "",
-          "hasExtensions": false,
-          "hasFields": true,
-          "hasOneofs": false,
-          "extensions": [],
-          "fields": [
-            {
-              "name": "payment_transaction_id",
-              "description": "",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "business_id",
-              "description": "",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "gross_amount",
-              "description": "",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "requester_ref_id",
-              "description": "",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "currency",
-              "description": "",
-              "label": "",
-              "type": "Currency",
-              "longType": "Currency",
-              "fullType": "oyster.entities.pb.payment.domain.v1.Currency",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "payment_method",
-              "description": "",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "status",
-              "description": "",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "fee",
-              "description": "",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "net_amount",
-              "description": "",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "settled_at",
-              "description": "",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "created_at",
-              "description": "",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "updated_at",
-              "description": "",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            }
-          ]
-        }
-      ],
-      "services": []
-    },
-    {
-      "name": "oyster/entities/pb/v1/commons.proto",
-      "description": "Metadata related messages about permission and debug\n\nThis file have the Permission and Debug messages as base for all the gRPC communications",
-      "package": "oyster.entities.pb.v1",
-      "hasEnums": false,
-      "hasExtensions": false,
-      "hasMessages": true,
-      "hasServices": false,
-      "enums": [],
-      "extensions": [],
-      "messages": [
-        {
-          "name": "Coordinates",
-          "longName": "Coordinates",
-          "fullName": "oyster.entities.pb.v1.Coordinates",
-          "description": "Coordinates message to hold information about the client location",
-          "hasExtensions": false,
-          "hasFields": true,
-          "hasOneofs": false,
-          "extensions": [],
-          "fields": [
-            {
-              "name": "lat",
-              "description": "latitude",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "lon",
-              "description": "longitude",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            }
-          ]
-        },
-        {
-          "name": "Debug",
-          "longName": "Debug",
-          "fullName": "oyster.entities.pb.v1.Debug",
-          "description": "Debug message to hold information about the request/response",
-          "hasExtensions": false,
-          "hasFields": true,
-          "hasOneofs": false,
-          "extensions": [],
-          "fields": [
-            {
-              "name": "debug_id",
-              "description": "debug id to search in logs",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "user_id",
-              "description": "user id (DEPRECATED)",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "client",
-              "description": "client (DEPRECATED)",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "locale",
-              "description": "locale (DEPRECATED)",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "trace_id",
-              "description": "trace id to search in the system",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "app_version",
-              "description": "application version (DEPRECATED)",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "app_requested_api_version",
-              "description": "application requested api version (DEPRECATED)",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "device_id",
-              "description": "device id client",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "device_type",
-              "description": "device type (DEPRECATED)",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "ip",
-              "description": "ip client (DEPRECATED)",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "coordinates",
-              "description": "coordinates (DEPRECATED)",
-              "label": "",
-              "type": "Coordinates",
-              "longType": "Coordinates",
-              "fullType": "oyster.entities.pb.v1.Coordinates",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            }
-          ]
-        },
-        {
-          "name": "Permission",
-          "longName": "Permission",
-          "fullName": "oyster.entities.pb.v1.Permission",
-          "description": "Permission message to hold information from the client\n(DEPRECATED)",
-          "hasExtensions": false,
-          "hasFields": true,
-          "hasOneofs": false,
-          "extensions": [],
-          "fields": [
-            {
-              "name": "permission_id",
-              "description": "",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "name",
-              "description": "",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "create_at",
-              "description": "",
-              "label": "",
-              "type": "int64",
-              "longType": "int64",
-              "fullType": "int64",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "updated_at",
-              "description": "",
-              "label": "",
-              "type": "int64",
-              "longType": "int64",
-              "fullType": "int64",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            }
-          ]
-        }
-      ],
-      "services": []
-    },
-    {
-      "name": "oyster/entities/pb/v1/auth.proto",
-      "description": "Authorization related messages.\n\nThis file has the Authorization message as base for all the gRPC communications",
-      "package": "oyster.entities.pb.v1",
-      "hasEnums": false,
-      "hasExtensions": false,
-      "hasMessages": true,
-      "hasServices": false,
-      "enums": [],
-      "extensions": [],
-      "messages": [
-        {
-          "name": "Authorization",
-          "longName": "Authorization",
-          "fullName": "oyster.entities.pb.v1.Authorization",
-          "description": "Authorization base message to hold the information from the client",
           "hasExtensions": false,
           "hasFields": true,
           "hasOneofs": false,
@@ -536,96 +23,22 @@
           "fields": [
             {
               "name": "token",
-              "description": "token of type JWT",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "permission",
               "description": "",
               "label": "",
-              "type": "Permission",
-              "longType": "Permission",
-              "fullType": "oyster.entities.pb.v1.Permission",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "ip",
-              "description": "ip client",
-              "label": "",
               "type": "string",
               "longType": "string",
               "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "user_agent",
-              "description": "user agent client",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "device_id",
-              "description": "device id client",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "debug",
-              "description": "debug information with:\ntrace_id\napp_version\netc.",
-              "label": "",
-              "type": "Debug",
-              "longType": "Debug",
-              "fullType": "oyster.entities.pb.v1.Debug",
               "ismap": false,
               "isoneof": false,
               "oneofdecl": "",
               "defaultValue": ""
             }
           ]
-        }
-      ],
-      "services": []
-    },
-    {
-      "name": "oyster/entities/pb/payment/v1/payment_detail_request.proto",
-      "description": "",
-      "package": "oyster.entities.pb.payment.v1",
-      "hasEnums": false,
-      "hasExtensions": false,
-      "hasMessages": true,
-      "hasServices": false,
-      "enums": [],
-      "extensions": [],
-      "messages": [
+        },
         {
-          "name": "GetPaymentTransactionRequest",
-          "longName": "GetPaymentTransactionRequest",
-          "fullName": "oyster.entities.pb.payment.v1.GetPaymentTransactionRequest",
+          "name": "VerifyTokenResponse",
+          "longName": "VerifyTokenResponse",
+          "fullName": "oyster.entities.pb.authentication.internal.v1.VerifyTokenResponse",
           "description": "",
           "hasExtensions": false,
           "hasFields": true,
@@ -633,200 +46,7 @@
           "extensions": [],
           "fields": [
             {
-              "name": "authorization",
-              "description": "",
-              "label": "",
-              "type": "Authorization",
-              "longType": "oyster.entities.pb.v1.Authorization",
-              "fullType": "oyster.entities.pb.v1.Authorization",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "debug",
-              "description": "",
-              "label": "",
-              "type": "Debug",
-              "longType": "oyster.entities.pb.v1.Debug",
-              "fullType": "oyster.entities.pb.v1.Debug",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "payment_id",
-              "description": "",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            }
-          ]
-        }
-      ],
-      "services": []
-    },
-    {
-      "name": "oyster/entities/pb/v1/errors.proto",
-      "description": "Error related messages.\n\nThis file has the error messages for the communications between services",
-      "package": "oyster.entities.pb.v1",
-      "hasEnums": true,
-      "hasExtensions": false,
-      "hasMessages": true,
-      "hasServices": false,
-      "enums": [
-        {
-          "name": "ErrorCode",
-          "longName": "ErrorCode",
-          "fullName": "oyster.entities.pb.v1.ErrorCode",
-          "description": "ErrorCode message to hold a coded information about the specific error",
-          "values": [
-            {
-              "name": "ERROR_CODE_UNSPECIFIED",
-              "number": "0",
-              "description": "Just default value for enum in proto. Should not be used as error code."
-            },
-            {
-              "name": "ERROR_CODE_NPE",
-              "number": "4",
-              "description": "When any required input is null."
-            },
-            {
-              "name": "ERROR_CODE_ILLEGAL",
-              "number": "5",
-              "description": "Mostly used with validation check."
-            },
-            {
-              "name": "ERROR_CODE_DUPLICATE",
-              "number": "6",
-              "description": "For duplicate records."
-            },
-            {
-              "name": "ERROR_CODE_FAILED",
-              "number": "7",
-              "description": "When any action fails. Like while saving record on db"
-            },
-            {
-              "name": "ERROR_CODE_NOTFOUND",
-              "number": "8",
-              "description": "When records are not found."
-            },
-            {
-              "name": "ERROR_CODE_INVALID",
-              "number": "9",
-              "description": "For invalid inputs."
-            },
-            {
-              "name": "ERROR_CODE_EXCEPTION",
-              "number": "10",
-              "description": "For any runtime exception"
-            },
-            {
-              "name": "ERROR_CODE_TIMEOUT",
-              "number": "11",
-              "description": "For timeouts on calling any third party services"
-            },
-            {
-              "name": "ERROR_CODE_AUTH_ERROR",
-              "number": "12",
-              "description": "If authorization failed"
-            },
-            {
-              "name": "ERROR_CODE_PERMISSION_ERROR",
-              "number": "13",
-              "description": "If user don't have permission"
-            },
-            {
-              "name": "ERROR_CODE_FORBIDDEN",
-              "number": "14",
-              "description": "If user don't have permission"
-            }
-          ]
-        }
-      ],
-      "extensions": [],
-      "messages": [
-        {
-          "name": "ErrorMessage",
-          "longName": "ErrorMessage",
-          "fullName": "oyster.entities.pb.v1.ErrorMessage",
-          "description": "ErrorMessage message to hold the detailed information about the error",
-          "hasExtensions": false,
-          "hasFields": true,
-          "hasOneofs": false,
-          "extensions": [],
-          "fields": [
-            {
-              "name": "code",
-              "description": "code reference",
-              "label": "",
-              "type": "ErrorCode",
-              "longType": "ErrorCode",
-              "fullType": "oyster.entities.pb.v1.ErrorCode",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "messages",
-              "description": "messages is a repeated detailed information about the error",
-              "label": "repeated",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            }
-          ]
-        }
-      ],
-      "services": []
-    },
-    {
-      "name": "oyster/entities/pb/payment/v1/payment_detail_response.proto",
-      "description": "",
-      "package": "oyster.entities.pb.payment.v1",
-      "hasEnums": false,
-      "hasExtensions": false,
-      "hasMessages": true,
-      "hasServices": false,
-      "enums": [],
-      "extensions": [],
-      "messages": [
-        {
-          "name": "GetPaymentTransactionResponse",
-          "longName": "GetPaymentTransactionResponse",
-          "fullName": "oyster.entities.pb.payment.v1.GetPaymentTransactionResponse",
-          "description": "",
-          "hasExtensions": false,
-          "hasFields": true,
-          "hasOneofs": false,
-          "extensions": [],
-          "fields": [
-            {
-              "name": "debug",
-              "description": "",
-              "label": "",
-              "type": "Debug",
-              "longType": "oyster.entities.pb.v1.Debug",
-              "fullType": "oyster.entities.pb.v1.Debug",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "success",
+              "name": "valid",
               "description": "",
               "label": "",
               "type": "bool",
@@ -836,42 +56,6 @@
               "isoneof": false,
               "oneofdecl": "",
               "defaultValue": ""
-            },
-            {
-              "name": "error",
-              "description": "",
-              "label": "",
-              "type": "bool",
-              "longType": "bool",
-              "fullType": "bool",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "error_message",
-              "description": "",
-              "label": "",
-              "type": "ErrorMessage",
-              "longType": "oyster.entities.pb.v1.ErrorMessage",
-              "fullType": "oyster.entities.pb.v1.ErrorMessage",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "payment",
-              "description": "",
-              "label": "",
-              "type": "Payment",
-              "longType": "oyster.entities.pb.payment.domain.v1.Payment",
-              "fullType": "oyster.entities.pb.payment.domain.v1.Payment",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
             }
           ]
         }
@@ -879,9 +63,9 @@
       "services": []
     },
     {
-      "name": "oyster/entities/pb/payment/v1/process_payment_request.proto",
+      "name": "oyster/entities/pb/authentication/v1/auth.proto",
       "description": "",
-      "package": "oyster.entities.pb.payment.v1",
+      "package": "oyster.entities.pb.authentication.v1",
       "hasEnums": false,
       "hasExtensions": false,
       "hasMessages": true,
@@ -890,9 +74,9 @@
       "extensions": [],
       "messages": [
         {
-          "name": "MakePaymentRequest",
-          "longName": "MakePaymentRequest",
-          "fullName": "oyster.entities.pb.payment.v1.MakePaymentRequest",
+          "name": "LoginRequest",
+          "longName": "LoginRequest",
+          "fullName": "oyster.entities.pb.authentication.v1.LoginRequest",
           "description": "",
           "hasExtensions": false,
           "hasFields": true,
@@ -900,31 +84,7 @@
           "extensions": [],
           "fields": [
             {
-              "name": "authorization",
-              "description": "",
-              "label": "",
-              "type": "Authorization",
-              "longType": "oyster.entities.pb.v1.Authorization",
-              "fullType": "oyster.entities.pb.v1.Authorization",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "debug",
-              "description": "",
-              "label": "",
-              "type": "Debug",
-              "longType": "oyster.entities.pb.v1.Debug",
-              "fullType": "oyster.entities.pb.v1.Debug",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "business_id",
+              "name": "email",
               "description": "",
               "label": "",
               "type": "string",
@@ -936,79 +96,7 @@
               "defaultValue": ""
             },
             {
-              "name": "requester_ref_id",
-              "description": "",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "gross_amount",
-              "description": "",
-              "label": "",
-              "type": "int64",
-              "longType": "int64",
-              "fullType": "int64",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "description",
-              "description": "",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "currency",
-              "description": "",
-              "label": "",
-              "type": "Currency",
-              "longType": "oyster.entities.pb.payment.domain.v1.Currency",
-              "fullType": "oyster.entities.pb.payment.domain.v1.Currency",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "payment_method",
-              "description": "",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "payeer_name",
-              "description": "",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "payeer_email",
+              "name": "password",
               "description": "",
               "label": "",
               "type": "string",
@@ -1020,25 +108,11 @@
               "defaultValue": ""
             }
           ]
-        }
-      ],
-      "services": []
-    },
-    {
-      "name": "oyster/entities/pb/payment/v1/process_payment_response.proto",
-      "description": "",
-      "package": "oyster.entities.pb.payment.v1",
-      "hasEnums": false,
-      "hasExtensions": false,
-      "hasMessages": true,
-      "hasServices": false,
-      "enums": [],
-      "extensions": [],
-      "messages": [
+        },
         {
-          "name": "MakePaymentResponse",
-          "longName": "MakePaymentResponse",
-          "fullName": "oyster.entities.pb.payment.v1.MakePaymentResponse",
+          "name": "LoginResponse",
+          "longName": "LoginResponse",
+          "fullName": "oyster.entities.pb.authentication.v1.LoginResponse",
           "description": "",
           "hasExtensions": false,
           "hasFields": true,
@@ -1046,127 +120,7 @@
           "extensions": [],
           "fields": [
             {
-              "name": "debug",
-              "description": "",
-              "label": "",
-              "type": "Debug",
-              "longType": "oyster.entities.pb.v1.Debug",
-              "fullType": "oyster.entities.pb.v1.Debug",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "error",
-              "description": "",
-              "label": "",
-              "type": "bool",
-              "longType": "bool",
-              "fullType": "bool",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "success",
-              "description": "",
-              "label": "",
-              "type": "bool",
-              "longType": "bool",
-              "fullType": "bool",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "error_message",
-              "description": "",
-              "label": "",
-              "type": "ErrorMessage",
-              "longType": "oyster.entities.pb.v1.ErrorMessage",
-              "fullType": "oyster.entities.pb.v1.ErrorMessage",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "timestamp",
-              "description": "",
-              "label": "",
-              "type": "int64",
-              "longType": "int64",
-              "fullType": "int64",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "business_id",
-              "description": "",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "requester_ref_id",
-              "description": "",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "gross_amount",
-              "description": "",
-              "label": "",
-              "type": "int64",
-              "longType": "int64",
-              "fullType": "int64",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "currency",
-              "description": "",
-              "label": "",
-              "type": "Currency",
-              "longType": "oyster.entities.pb.payment.domain.v1.Currency",
-              "fullType": "oyster.entities.pb.payment.domain.v1.Currency",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "status",
-              "description": "",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "payment_id",
+              "name": "token",
               "description": "",
               "label": "",
               "type": "string",
@@ -1183,9 +137,9 @@
       "services": []
     },
     {
-      "name": "oyster/rpc/payment/v1/payment_info_rpc.proto",
+      "name": "oyster/services/authentication/internal/v1/auth.proto",
       "description": "",
-      "package": "oyster.rpc.payment.v1",
+      "package": "oyster.services.authentication.internal.v1",
       "hasEnums": false,
       "hasExtensions": false,
       "hasMessages": false,
@@ -1195,21 +149,21 @@
       "messages": [],
       "services": [
         {
-          "name": "PaymentInfoService",
-          "longName": "PaymentInfoService",
-          "fullName": "oyster.rpc.payment.v1.PaymentInfoService",
+          "name": "AuthenticationInternalService",
+          "longName": "AuthenticationInternalService",
+          "fullName": "oyster.services.authentication.internal.v1.AuthenticationInternalService",
           "description": "",
           "methods": [
             {
-              "name": "GetPaymentTransaction",
+              "name": "VerifyToken",
               "description": "",
-              "requestType": "GetPaymentTransactionRequest",
-              "requestLongType": ".oyster.entities.pb.payment.v1.GetPaymentTransactionRequest",
-              "requestFullType": "oyster.entities.pb.payment.v1.GetPaymentTransactionRequest",
+              "requestType": "VerifyTokenRequest",
+              "requestLongType": ".oyster.entities.pb.authentication.internal.v1.VerifyTokenRequest",
+              "requestFullType": "oyster.entities.pb.authentication.internal.v1.VerifyTokenRequest",
               "requestStreaming": false,
-              "responseType": "GetPaymentTransactionResponse",
-              "responseLongType": ".oyster.entities.pb.payment.v1.GetPaymentTransactionResponse",
-              "responseFullType": "oyster.entities.pb.payment.v1.GetPaymentTransactionResponse",
+              "responseType": "VerifyTokenResponse",
+              "responseLongType": ".oyster.entities.pb.authentication.internal.v1.VerifyTokenResponse",
+              "responseFullType": "oyster.entities.pb.authentication.internal.v1.VerifyTokenResponse",
               "responseStreaming": false
             }
           ]
@@ -1217,9 +171,9 @@
       ]
     },
     {
-      "name": "oyster/rpc/payment/v1/process_payment_rpc.proto",
+      "name": "oyster/services/authentication/v1/auth.proto",
       "description": "",
-      "package": "oyster.rpc.payment.v1",
+      "package": "oyster.services.authentication.v1",
       "hasEnums": false,
       "hasExtensions": false,
       "hasMessages": false,
@@ -1229,21 +183,21 @@
       "messages": [],
       "services": [
         {
-          "name": "ProcessPaymentService",
-          "longName": "ProcessPaymentService",
-          "fullName": "oyster.rpc.payment.v1.ProcessPaymentService",
+          "name": "AuthenticationService",
+          "longName": "AuthenticationService",
+          "fullName": "oyster.services.authentication.v1.AuthenticationService",
           "description": "",
           "methods": [
             {
-              "name": "MakePayment",
+              "name": "Login",
               "description": "",
-              "requestType": "MakePaymentRequest",
-              "requestLongType": ".oyster.entities.pb.payment.v1.MakePaymentRequest",
-              "requestFullType": "oyster.entities.pb.payment.v1.MakePaymentRequest",
+              "requestType": "LoginRequest",
+              "requestLongType": ".oyster.entities.pb.authentication.v1.LoginRequest",
+              "requestFullType": "oyster.entities.pb.authentication.v1.LoginRequest",
               "requestStreaming": false,
-              "responseType": "MakePaymentResponse",
-              "responseLongType": ".oyster.entities.pb.payment.v1.MakePaymentResponse",
-              "responseFullType": "oyster.entities.pb.payment.v1.MakePaymentResponse",
+              "responseType": "LoginResponse",
+              "responseLongType": ".oyster.entities.pb.authentication.v1.LoginResponse",
+              "responseFullType": "oyster.entities.pb.authentication.v1.LoginResponse",
               "responseStreaming": false
             }
           ]

@@ -52,3 +52,11 @@ plugins:
     opt:
       - paths=source_relative
       - require_unimplemented_servers=false
+
+  # Go reverse proxy
+  - name: grpc-gateway
+    out: ../go
+    strategy: all
+    opt:
+      - paths=source_relative
+      - grpc_api_configuration=oyster/services/authentication/v1/auth.yaml

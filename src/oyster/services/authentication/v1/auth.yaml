@@ -1,0 +1,8 @@
+type: google.api.Service
+config_version: 3
+
+http:
+  rules:
+    - selector: oyster.services.authentication.v1.AuthenticationService.Login
+      post: /v1/authentication/login
+      body: "*"
