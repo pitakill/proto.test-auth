@@ -2,7 +2,7 @@ version: v1
 managed:
   enabled: true
   go_package_prefix:
-    default: github.com/yaydoo/proto.boilerplate/go # Keep the `/go` suffix
+    default: github.com/pitakill/proto.test-auth/go # Keep the `/go` suffix
 plugins:
   # Documentation
   - name: doc

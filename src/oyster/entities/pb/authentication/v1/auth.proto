@@ -1,0 +1,15 @@
+syntax = "proto3";
+package oyster.entities.pb.authentication.v1;
+
+option java_generate_equals_and_hash = true;
+option java_outer_classname = "AuthenticationPb";
+option java_package = "com.oyster.entities.pb.authentication";
+
+message LoginRequest {
+  string email = 1;
+  string password = 2;
+}
+
+message LoginResponse {
+  string token = 1;
+}
