@@ -49,11 +49,6 @@
 
 
 
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| valid | [bool](#bool) |  |  |
-
-
 
 
 
